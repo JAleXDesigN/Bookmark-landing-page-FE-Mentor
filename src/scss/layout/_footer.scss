@@ -1,0 +1,116 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.footer {
+    background-color: v.$veryDarkBlue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .container-footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 5rem 5rem 2.5rem 5rem;
+        img {
+            width: 15rem;
+            @include m.tablet {
+                margin-right: 6rem;
+                margin-bottom: -3px;
+            }
+        }
+        @include m.tablet {
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 1rem 3.5rem .5rem;
+            width: 100%;
+        }
+        @include m.desktop {
+            padding: 1rem 12.5rem;
+        }
+    }
+    .fe-mentor {
+        margin: 0 auto;
+        padding: 2.5rem 5rem 5rem;
+        @include m.tablet {
+            padding: .5rem 3.5rem 1rem;
+        }
+        @include m.desktop {
+            padding: 0 0 1rem;
+        }
+        p {
+            margin: 0;
+            text-align: center;
+            color: v.$white;
+            a {
+                color: v.$white;
+                text-transform: uppercase;
+                &:hover {
+                    color: v.$softRed;
+                }
+            }
+        }
+    }
+}
+
+.navegacion-footer {
+    @include m.tablet {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: space-between;
+    }
+    .enlaces-footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        margin: 3rem 0;
+        li {
+            padding: 2rem 0;
+            a {
+                color: v.$white;
+                text-transform: uppercase;
+                padding: 2rem 0;
+                font-size: 1.6rem;
+                letter-spacing: 3px;
+            }
+        } 
+        @include m.tablet {
+            flex-direction: row;
+            align-items: center;
+            margin: 0;
+            li a {
+                font-size: 1.4rem;
+                font-weight: 400;
+                margin-right: 3rem;
+                @include m.desktop {
+                    margin-right: 6rem;
+                }
+                &:hover {
+                    color: v.$softRed;
+                }
+            }
+        }
+    } 
+    .socials-nav-footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+            width: 3rem;
+            height: 3rem;
+            margin-right: 3rem;
+            &:hover {
+                cursor: pointer;
+            }
+            &:last-of-type {
+                margin-right: 0;
+            }
+            @include m.tablet {
+                width: 2.5rem;
+                height: 2.5rem;
+            }
+        }
+    }
+}

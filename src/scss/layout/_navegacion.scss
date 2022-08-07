@@ -1,0 +1,119 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.header {
+    padding: 3.5rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    @include m.desktop {
+        padding: 3.5rem 12.5rem
+    }
+    .logo {
+        z-index: 11;
+    }
+    .navegacion {
+        background-color: v.$veryDarkBlue;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        transform: translateY(-100%);
+        z-index: 10;
+        @include m.tablet {
+            background-color: v.$white;
+            position: relative;
+            align-items: flex-end;
+            height: auto;
+            transform: translateY(0%);
+        }
+        .socials-nav {
+            img {
+                margin-right: 3rem;
+                &:last-of-type {
+                    margin-right: 0;
+                }
+            }
+            @include m.tablet {
+                display: none;
+            }  
+        }
+        &.active {
+            transform: translateY(0%);
+        }
+    }
+    .open-menu {
+        z-index: 11;
+        @include m.tablet {
+            display: none;
+        }
+    }
+}
+
+.enlaces {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    li {
+        text-align: center;
+        text-transform: uppercase;
+        padding: 2rem 0;
+        border-top: 1px solid v.$grayishBlue; 
+        a {
+            color: v.$white;
+            font-weight: 400;
+            font-size: 2rem;
+            letter-spacing: .25rem;
+            &.login {
+                display: block;
+                font-weight: 500;
+                border: 2px solid v.$white;
+                border-radius: .5rem;
+                padding: 1.5rem;
+                margin-top: 1rem;
+            }
+        }
+    }
+    @include m.tablet {
+        margin: 0;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        li {
+            padding: 0;
+            border: none;
+            a {
+                color: v.$veryDarkBlue;
+                font-size: 1.4rem;
+                letter-spacing: 2px;
+                margin-right: 3rem;
+                &:hover {
+                    color: v.$softRed;
+                }
+                &.login {
+                    margin: 0;
+                    border: 2px solid transparent;
+                    background-color: v.$softRed;
+                    color: v.$white;
+                    font-size: 1.7rem;
+                    font-weight: 500;
+                    border-radius: .8rem;
+                    padding: 1.2rem 4rem;
+                    &:hover {
+                        border: 2px solid v.$softRed;
+                        background-color: v.$white;
+                        color: v.$softRed;
+                    }
+                }
+            }  
+        }      
+    }
+}
+

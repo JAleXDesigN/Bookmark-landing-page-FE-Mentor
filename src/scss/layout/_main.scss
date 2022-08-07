@@ -1,0 +1,121 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.content-main {
+    display: flex;
+    flex-direction: column;
+    @include m.tablet {
+        flex-direction: row;
+        align-items: center;
+        .images-main {
+            flex: 0 1 50%;
+            order: 2;
+        }
+        .info-main-cont {
+            flex: 0 1 50%;
+            order: 1;
+        }
+    }
+    .images-main {
+        width: 100%;
+        position: relative;
+        margin: 3rem 0;
+        .img-hero {
+            position: relative;
+            z-index: 1;
+        }
+        .bg {
+            background-color: v.$softBlue;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 79%;
+            height: 75%;
+            border-bottom-left-radius: 25%;
+            z-index: 0;
+        }
+    }
+    
+}
+
+.info-main {
+    width: 90%;
+    margin: 0 auto;
+    h1 {
+        text-align: center;
+        font-size: 3rem;
+        font-weight: 500;
+        text-transform: capitalize;
+        margin: 2rem 0;
+        line-height: 1.4;
+    }
+    p {
+        text-align: center;
+        font-size: 1.8rem;
+        font-weight: 400;
+        line-height: 1.5;
+    }
+    @include m.tablet {
+        width: 100%;
+        padding-left: 2.8rem;
+        h1, p {
+            text-align: start;
+        }
+    }
+    @include m.desktop {
+        padding-left: 12.5rem;
+        h1 {
+            font-size: 3.5rem;
+            max-width: 35rem;
+        }
+        p {
+            max-width: 50rem;
+        }
+    }
+}
+.get-btn {
+    width: 90%;
+    margin: 3rem auto;
+    display: flex;
+    justify-content: center;
+    a {
+        text-align: center;
+        margin-right: 2rem;
+        padding: 1.5rem 2rem;
+        font-size: 1.6rem;
+        border-radius: .8rem;
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+    .btn-blue {
+        background-color: v.$softBlue;
+        color: v.$white;
+        border: 2px solid transparent;
+        &:hover{
+            cursor: pointer;
+            background-color: v.$white;
+            border: 2px solid v.$softBlue;
+            color: v.$softBlue;
+        }
+    }
+    .btn-white {
+        box-shadow: 1px 1px 1px 2px hsl(230, 10%, 89%);
+        border: 2px solid transparent;
+        &:hover{
+            cursor: pointer;
+            background-color: v.$white;
+            border: 2px solid v.$veryDarkBlue;
+            color: v.$veryDarkBlue;
+            box-shadow: none;
+        }
+    }
+    @include m.tablet {
+        justify-content: start;
+        width: 100%;
+        padding-left: 2.8rem;
+    }
+    @include m.desktop {
+        padding-left: 12.5rem;
+    }
+}

@@ -1,0 +1,48 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: v.$fuentePrincipal;
+    font-size: 1.8rem;
+    margin: 0 auto;
+}
+a {
+    text-decoration: none;
+    color: v.$veryDarkBlue;
+    font-weight: 500;
+}
+button {
+    font-weight: 500;
+}
+p {
+    color: v.$grayishBlue;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+h2 {
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+h3 {
+    font-size: 2.3rem;
+    font-weight: 500;
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+.img-fluid {
+    width: 100%;
+}
+

@@ -1,0 +1,87 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.pricing-section {
+    padding: 4.5rem 0;
+    .main-pricing {
+        width: 80%;
+        margin: 0 auto;
+        h2 {
+            text-align: center;
+        }
+        p {
+            text-align: center;
+        }
+        @include m.desktop {
+            p {
+                max-width: 55rem;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+
+.download-section {
+    padding: 4rem;
+    .chrome,
+    .firefox,
+    .opera {
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+        margin: 6rem 0;
+        .top-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            text-align: center;
+            h3 {
+                margin: 4rem 0 0 0;
+            }
+            p {
+                margin: 1rem;
+            }
+        }
+        .btn-download {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            .btn-dl {
+                background-color: v.$softBlue;
+                color: v.$white;
+                text-align: center;
+                padding: 1.5rem 3rem;
+                border-radius: .8rem;
+                border: 2px solid transparent;
+                &:hover{
+                    cursor: pointer;
+                    background-color: v.$white;
+                    border: 2px solid v.$softBlue;
+                    color: v.$softBlue;
+                }
+            }
+        }
+    }
+    @include m.tablet {
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        height: 45rem;
+        padding: 0;
+        margin: 4rem auto;
+        .chrome {
+            margin: 0 3rem 0 0;
+            align-self: flex-start;
+        }
+        .firefox {
+            margin: 0 3rem 0 0;
+            align-self: center;
+        }
+        .opera {
+            margin: 0;
+            align-self: flex-end;
+        }
+    }
+}
